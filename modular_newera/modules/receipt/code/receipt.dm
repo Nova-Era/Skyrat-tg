@@ -9,3 +9,5 @@
 /obj/machinery/vending/proc/issue_receipt(item, id, cost, machine, location)
     var/obj/item/receipt/r = new /obj/item/receipt(get_turf(src))
     r.desc += " This one says that an [item] was sold by [cost] credits and paid by [id]. Issued by [machine] at [location]."
+	
+	
