@@ -1,4 +1,4 @@
-## Title: Receipt
+## Title: MedMaga
 
 MODULE ID: MEDMAGA
 
