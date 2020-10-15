@@ -1393,7 +1393,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	for(var/client/C in clients_list_copy)
 		clients_list_copy[C] = C.get_exp_living()
 	sortTim(clients_list_copy, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
-	//sortList(sortedPlaytime)
+	//sortList(clients_list_copy)
 	// new era end
 	for(var/client/C in clients_list_copy)
 		msg += "<LI> - [key_name_admin(C)]: <A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
