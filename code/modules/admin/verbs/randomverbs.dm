@@ -1397,7 +1397,12 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	var/list/msg = list()
 	msg += "<html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Playtime Report</title></head><body>Playtime:<BR><UL>"
 	var/list/clients_list_copy = GLOB.clients.Copy()
-	sortList(clients_list_copy)
+	// new era start -- sort by hours played; highest on top
+	for(var/client/C in clients_list_copy)
+		clients_list_copy[C] = C.get_exp_living()
+	clients_list_copy = sortTim(clients_list_copy, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
+	//sortList(clients_list_copy)
+	// new era end
 	for(var/client/C in clients_list_copy)
 		msg += "<LI> - [key_name_admin(C)]: <A href='?_src_=holder;[HrefToken()];getplaytimewindow=[REF(C.mob)]'>" + C.get_exp_living() + "</a></LI>"
 	msg += "</UL></BODY></HTML>"
