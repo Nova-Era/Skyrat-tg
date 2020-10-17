@@ -1392,7 +1392,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	// new era start -- sort by hours played; highest on top
 	for(var/client/C in clients_list_copy)
 		clients_list_copy[C] = C.get_exp_living()
-	sortTim(clients_list_copy, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
+	clients_list_copy = sortTim(clients_list_copy, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
 	//sortList(clients_list_copy)
 	// new era end
 	for(var/client/C in clients_list_copy)
